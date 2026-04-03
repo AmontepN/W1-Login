@@ -1,0 +1,210 @@
+body.landing-page-v2 {
+    background-color: #eaeaec; /* กำหนดสีพื้นหลังหลักเป็นสีเทาอ่อน */
+    margin: 0;                 /* ลบระยะขอบเริ่มต้นของเบราว์เซอร์ */
+}
+
+/* =========================================
+    Top Navigation Bar
+   ========================================= */
+.top-nav {
+    background: linear-gradient(90deg, #a7d142 0%, #4eb99f 100%); /* พื้นหลังแบบไล่สี (Gradient) */
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between; /* จัดพื้นที่ให้องค์ประกอบแยกซ้าย-ขวา */
+    align-items: center;            /* จัดกึ่งกลางในแนวตั้ง */
+    color: white;
+}
+
+.nav-title { 
+    font-size: 14px; 
+    font-weight: bold; 
+    letter-spacing: 0.5px; 
+}
+
+.nav-title span { 
+    font-weight: normal; 
+    margin-left: 5px; 
+}
+
+.nav-menu { 
+    font-size: 20px; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+/* =========================================
+    พื้นที่แสดงแบนเนอร์
+   ========================================= */
+
+/* โครงสร้างจำลองสำหรับพื้นที่แบนเนอร์ (Placeholder) */
+.placeholder-banner {
+    width: 100%;
+    height: 180px;             /* กำหนดความสูงจำลอง */
+    background-color: #dcdcdc; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* การควบคุมสัดส่วนของรูปภาพแบนเนอร์จริง */
+.banner-image {
+    width: 100%;               /* ขยายรูปภาพให้เต็มความกว้างของหน้าจอ */
+    height: auto;              /* รักษาสัดส่วนความสูงอัตโนมัติ */
+    display: block;
+}
+
+/* =========================================
+    พื้นที่เนื้อหาหลักและเมนู
+   ========================================= */
+.content-wrapper {
+    max-width: 800px;          /* จำกัดความกว้างสูงสุดเพื่อความสวยงามบนหน้าจอขนาดใหญ่ */
+    margin: 0 auto;            /* จัดตำแหน่งให้อยู่กึ่งกลางหน้าจอ */
+    padding: 15px;
+}
+
+/* พื้นหลังเมนู */
+.menu-board-v2 {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 30px 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* เพิ่มเงาตกกระทบแบบนุ่มนวล */
+}
+
+/* ระบบตารางสำหรับจัดเรียงปุ่มเมนู*/
+.menu-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* จัดเรียงคอลัมน์อัตโนมัติตามขนาดหน้าจอ */
+    row-gap: 30px;             /* ระยะห่างระหว่างแถว */
+    column-gap: 10px;          /* ระยะห่างระหว่างคอลัมน์ */
+}
+
+/* =========================================
+    ตกแต่งปุ่มเมนูและไอคอน
+   ========================================= */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;          /* เพิ่มความนุ่มนวลในการแสดงผลเอฟเฟกต์ */
+}
+
+/* สถานะเมื่อนำเมาส์ชี้ (Hover Effect) */
+.menu-item:hover { 
+    transform: scale(1.05);    /* ขยายขนาดปุ่มเล็กน้อย */
+}
+
+/* กรอบวงกลมสำหรับบรรจุไอคอน */
+.icon-ring {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #e0e0e0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #fafafa; /* กำหนดสีพื้นหลังสำรอง */
+}
+
+/* การควบคุมขนาดของรูปภาพไอคอนภายในกรอบวงกลม */
+.icon-ring img {
+    width: 35px;
+    height: auto;
+}
+
+.menu-item p { 
+    margin: 0; 
+    font-size: 13px; 
+    color: #444; 
+    line-height: 1.4; 
+}
+
+/* =========================================
+    inbox and popup
+   ========================================= */
+
+/* กรอบหลักสำหรับควบคุมพื้นที่ระบบ Inbox */
+.inbox-wrapper {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    overflow: hidden;          /* ป้องกันเนื้อหาด้านในแสดงผลล้นขอบเขต */
+}
+
+/* แถบส่วนหัวของ Inbox สำหรับคลิกเปิด-ปิด */
+.inbox-bar {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* การจัดเรียงองค์ประกอบฝั่งซ้ายของแถบ Inbox */
+.inbox-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    margin-top: 10px;
+}
+
+/* การตกแต่งไอคอน Inbox ดั้งเดิม (หากมีการใช้งาน) */
+.inbox-icon-bg {
+    width: 35px;
+    height: 35px;
+    background-color: #8cc63f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inbox-icon-bg img {
+    width: 18px;
+    height: auto;
+}
+
+.inbox-text { 
+    font-size: 18px; 
+    color: #333; 
+}
+
+/* การจัดการแอนิเมชันของไอคอนลูกศร */
+.inbox-arrow { 
+    color: #888; 
+    font-weight: bold; 
+    transition: transform 0.3s; /* ควบคุมความเร็วในการหมุน */
+}
+
+/* สถานะเมื่อลูกศรถูกสั่งให้หมุน (เรียกใช้ผ่าน JavaScript) */
+.inbox-arrow.rotate {
+    transform: rotate(180deg);  /* หมุนไอคอน 180 องศา */
+}
+
+/* -----------------------------------------
+    การควบคุมกล่องข้อความ Pop-up
+   ----------------------------------------- */
+.inbox-popup {
+    max-height: 0;             /* ซ่อนกล่องข้อความโดยค่าเริ่มต้นด้วยการจำกัดความสูง */
+    transition: max-height 0.3s ease-out; /* เพิ่มแอนิเมชันขณะแสดงผล */
+    background-color: #fafafa;
+    text-align: center;
+}
+
+/* สถานะเมื่อกล่องข้อความถูกเปิดแสดงผล (เรียกใช้ผ่าน JavaScript) */
+.inbox-popup.show {
+    max-height: 100px;         /* ขยายความสูงเพื่อแสดงเนื้อหา */
+    border-top: 1px dashed #ddd; /* เพิ่มเส้นประคั่นแบ่งส่วนเนื้อหา */
+}
+
+.inbox-popup p {
+    margin: 0;
+    padding: 15px;
+    font-size: 14px;
+}
