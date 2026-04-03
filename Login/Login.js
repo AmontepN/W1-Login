@@ -41,12 +41,12 @@ toggleEyeBtn.addEventListener("click", function() {
         // หากถูกซ่อนอยู่ ให้เปลี่ยนประเภทเป็น "text" เพื่อแสดงรหัสผ่าน
         passwordInput.type = "text";
         // เปลี่ยนรูปไอคอนเป็นสถานะ "ปิดตา"
-        eyeIconImg.src = "../Image/eye-hide.png"; 
+        eyeIconImg.src = "../Login/Image/eye-hide.png"; 
     } else {
         // หากกำลังแสดงผลอยู่ ให้เปลี่ยนประเภทกลับเป็น "password" เพื่อซ่อนรหัสผ่าน
         passwordInput.type = "password";
         // เปลี่ยนรูปไอคอนกลับเป็นสถานะ "เปิดตา"
-        eyeIconImg.src = "../Image/eye-view.png";  
+        eyeIconImg.src = "../Login/Image/eye-view.png";  
     }
 });
 
