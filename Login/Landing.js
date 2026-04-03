@@ -8,6 +8,69 @@ const menuContainer = document.getElementById("menu-container");
 // ตัวแปรจำลองข้อมูลข้อความ (ตั้งเป็นค่าว่าง "" เพื่อทดสอบกรณีที่ไม่มีข้อความ)
 let myMessage = "";
 
+const menuData = [
+    {
+        title: "Customer Portal",
+        link: "https://www.ais.th/consumers",
+        imgSrc: "../Login/Image/customer.png",
+        altText: "Customer Portal Icon"
+    },
+    {
+        title: "Sale",
+        link: "https://www.ais.th/consumers",
+        imgSrc: "../Login/Image/sale.png",
+        altText: "Sale Icon"
+    },
+    {
+        title: "e-Waste (Point)",
+        link: "https://www.ais.th/consumers",
+        imgSrc: "../Login/Image/e-waste.png",
+        altText: "e-Waste Icon"
+    },
+    {
+        title: "iKM",
+        link: "https://www.ais.th/consumers",
+        imgSrc: "../Login/Image/ikm.png",
+        altText: "iKM Icon"
+    },
+    {
+        title: "My AIS<br>(download)",
+        link: "https://www.ais.th/consumers",
+        imgSrc: "../Login/Image/myais.png",
+        altText: "My AIS Download Icon"
+    },
+    {
+        title: "e-Leaflet",
+        link: "https://www.ais.th/consumers",
+        imgSrc: "../Login/Image/e-leaflet.png",
+        altText: "e-Leaflet Icon"
+    },
+    {
+        title: "สมัครแทนบัตร",
+        link: "https://www.ais.th/consumers",
+        imgSrc: "../Login/Image/myais.png",
+        altText: "สมัครแทนบัตร Icon"
+    },
+    {
+        title: "แสดงตัวตน(NDID)",
+        link: "https://www.ais.th/consumers",
+        imgSrc: "../Login/Image/ndid.png",
+        altText: "NDID Icon"
+    },
+    {
+        title: "เครื่อง",
+        link: "https://www.ais.th/consumers",
+        imgSrc: "../Login/Image/device.png",
+        altText: "Device Icon"
+    },
+    {
+        title: "ซิม",
+        link: "https://www.ais.th/consumers",
+        imgSrc: "../Login/Image/sim.png",
+        altText: "SIM Icon"
+    }
+];
+
 /* =========================================
     ฟังก์ชันควบคุมการทำงานของ Inbox
    ========================================= */
@@ -36,42 +99,29 @@ inboxBtn.addEventListener("click", function() {
 });
 
 
-// 2. ฟังก์ชันดึงข้อมูล (Fetch) และสร้างเมนู
-// ใช้ async/await เพื่อสั่งให้ระบบ "รอ" ดึงข้อมูลให้เสร็จก่อนค่อยทำขั้นต่อไป
-async function fetchAndRenderMenu() {
-    try {
-        // วิ่งไปขอข้อมูลจากไฟล์ menu.json
-        const response = await fetch('menu.json');
+// ฟังก์ชันสำหรับสร้างปุ่มเมนู (Render Menu Items)
+function renderMenuItems() {
+    let htmlString = ""; // สร้างตัวแปรมารอเก็บโค้ด HTML
+
+    // วนลูปอ่านข้อมูลจาก JSON ทีละรายการ
+    menuData.forEach(function(item) {
         
-        // แปลงไฟล์ที่ได้มาให้กลายเป็นก้อนข้อมูล JSON (Array) ที่ JavaScript อ่านออก
-        const menuData = await response.json();
+        // นำข้อมูลมาประกอบกับโครงสร้าง HTML
+        htmlString += `
+            <div class="menu-item">
+                <a href="${item.link}" target="_blank" class="menu-item" style="text-decoration: none; color: inherit;">
+                    <div class="icon-ring">
+                        <img src="${item.imgSrc}" alt="${item.altText}">
+                    </div>
+                    <p>${item.title}</p>
+                </a>
+            </div>
+        `;
+    });
 
-        // เตรียมตัวแปรเก็บโครงสร้าง HTML
-        let htmlString = ""; 
-
-        // วนลูปอ่านข้อมูล
-        menuData.forEach(function(item) {
-            htmlString += `
-                <div class="menu-item">
-                    <a href="${item.link}" target="_blank" class="menu-item" style="text-decoration: none; color: inherit;">
-                        <div class="icon-ring">
-                            <img src="${item.imgSrc}" alt="${item.altText}">
-                        </div>
-                        <p>${item.title}</p>
-                    </a>
-                </div>
-            `;
-        });
-
-        // นำโค้ด HTML ไปแสดงผลบนหน้าเว็บ
-        menuContainer.innerHTML = htmlString;
-
-    } catch (error) {
-        // ดักจับ Error ในกรณีที่หาไฟล์ JSON ไม่เจอ หรือโหลดล้มเหลว
-        console.error("เกิดข้อผิดพลาดในการโหลดเมนู:", error);
-        menuContainer.innerHTML = `<p style="text-align:center; width:100%; color:red;">ไม่สามารถโหลดเมนูได้ในขณะนี้</p>`;
-    }
+    // นำโค้ด HTML ทั้งหมดที่ประกอบเสร็จแล้ว ไปแสดงผลบนหน้าเว็บ
+    menuContainer.innerHTML = htmlString;
 }
 
-// 3. สั่งให้ฟังก์ชันดึงข้อมูลทำงาน
-fetchAndRenderMenu();
+// 4. สั่งให้ฟังก์ชันทำงานทันทีเมื่อโหลดไฟล์เสร็จ
+renderMenuItems();
