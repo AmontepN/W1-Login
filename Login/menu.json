@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Customer Portal",
+        "link": "https://www.ais.th/consumers",
+        "imgSrc": "../Login/Image/customer.png",
+        "altText": "Customer Portal Icon"
+    },
+    {
+        "title": "Sale",
+        "link": "https://www.ais.th/consumers",
+        "imgSrc": "../Login/Image/sale.png",
+        "altText": "Sale Icon"
+    },
+    {
+        "title": "e-Waste (Point)",
+        "link": "https://www.ais.th/consumers",
+        "imgSrc": "../Login/Image/e-waste.png",
+        "altText": "e-Waste Icon"
+    },
+    {
+        "title": "iKM",
+        "link": "https://www.ais.th/consumers",
+        "imgSrc": "../Login/Image/ikm.png",
+        "altText": "iKM Icon"
+    },
+    {
+        "title": "My AIS<br>(download)",
+        "link": "https://www.ais.th/consumers",
+        "imgSrc": "../Login/Image/myais.png",
+        "altText": "My AIS Download Icon"
+    },
+    {
+        "title": "e-Leaflet",
+        "link": "https://www.ais.th/consumers",
+        "imgSrc": "../Login/Image/e-leaflet.png",
+        "altText": "e-Leaflet Icon"
+    },
+    {
+        "title": "สมัครแทนบัตร",
+        "link": "https://www.ais.th/consumers",
+        "imgSrc": "../Login/Image/myais.png",
+        "altText": "สมัครแทนบัตร Icon"
+    },
+    {
+        "title": "แสดงตัวตน(NDID)",
+        "link": "https://www.ais.th/consumers",
+        "imgSrc": "../Login/Image/ndid.png",
+        "altText": "NDID Icon"
+    },
+    {
+        "title": "เครื่อง",
+        "link": "https://www.ais.th/consumers",
+        "imgSrc": "../Login/Image/device.png",
+        "altText": "Device Icon"
+    },
+    {
+        "title": "ซิม",
+        "link": "https://www.ais.th/consumers",
+        "imgSrc": "../Login/Image/sim.png",
+        "altText": "SIM Icon"
+    }
+]
