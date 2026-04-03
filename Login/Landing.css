@@ -208,3 +208,86 @@ body.landing-page-v2 {
     padding: 15px;
     font-size: 14px;
 }
+
+/* =========================================
+    ส่วน Responsive: การปรับขนาดหน้าจอตามอุปกรณ์ (Media Queries)
+   ========================================= */
+
+/* 📱 สำหรับหน้าจอ iPad (แนวตั้งและแนวนอน ขนาด 768px ถึง 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .menu-grid-v2 {
+        /* บังคับให้แบ่งพื้นที่เป็น 4 คอลัมน์เท่าๆ กัน (แถวละ 4 อัน) */
+        grid-template-columns: repeat(4, 1fr);
+        
+        /* ปรับระยะห่างระหว่างคอลัมน์ให้ดูสวยงามขึ้นบนไอแพด */
+        column-gap: 20px; 
+        row-gap: 40px; 
+    }
+}
+
+/* 📱 (แถมครับ) สำหรับหน้าจอมือถือ (ขนาดเล็กกว่า 768px) */
+@media screen and (max-width: 767px) {
+    .menu-grid-v2 {
+        /* บังคับให้มือถือแสดงแถวละ 3 อัน หรือถ้าอยากได้ 2 อัน ให้แก้เลข 3 เป็น 2 ครับ */
+        grid-template-columns: repeat(3, 1fr); 
+        column-gap: 10px;
+    }
+}
+
+/* =========================================
+    ระบบเปลี่ยนหน้าเมนู (Pagination)
+   ========================================= */
+.pagination-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding-right: 20px;
+}
+
+/* ปุ่มลูกศร ซ้าย-ขวา */
+.page-btn {
+    background-color: #8cc63f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.page-btn:hover { background-color: #7ab236; }
+
+/* ปุ่ม (เป็นสีเทา) เมื่อกดไม่ได้แล้ว เช่น อยู่หน้าแรกแล้วกดถอยหลังไม่ได้ */
+.page-btn:disabled { 
+    background-color: #e0e0e0; 
+    color: #a0a0a0;
+    cursor: not-allowed; 
+}
+
+/* จุดไข่ปลาบอกหน้า */
+.page-dots { 
+    display: flex; 
+    gap: 8px; 
+}
+
+.dot {
+    width: 10px; 
+    height: 10px;
+    background-color: #dddddd;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* จุดไข่ปลาของหน้าที่กำลังเปิดอยู่ (ให้กว้างขึ้นและเป็นสีเขียว) */
+.dot.active { 
+    background-color: #8cc63f; 
+    width: 25px; 
+    border-radius: 5px; 
+}
